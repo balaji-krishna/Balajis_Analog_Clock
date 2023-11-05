@@ -1,0 +1,120 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold 
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right, rgb(255, 166, 0), rgb(238, 255, 0));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.analogClock{
+    width: 400px;
+    height: 400px;
+    background-color: rgba(1, 252, 239, 0.845);
+    border-radius: 50%;
+    border: 10px solid rgb(4, 12, 255);
+    position: relative;
+}
+
+.analogClock .number{
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+    color: rgb(4, 12, 255);
+}
+
+.analogClock .numberOne{
+    --rotation: 30deg;
+}
+.analogClock .numberTwo{
+    --rotation: 60deg;
+}
+.analogClock .numberThree{
+    --rotation: 90deg;
+}
+.analogClock .numberFour{
+    --rotation: 120deg;
+}
+.analogClock .numberFive{
+    --rotation: 150deg;
+}
+.analogClock .numberSix{
+    --rotation: 180deg;
+}
+.analogClock .numberSeven{
+    --rotation: 210deg;
+}
+.analogClock .numberEight{
+    --rotation: 240deg;
+}
+.analogClock .numberNine{
+    --rotation: 270deg;
+}
+.analogClock .numberTen{
+    --rotation: 300deg;
+}
+.analogClock .numberEleven{
+    --rotation: 330deg;
+}
+.analogClock .numberTwelve{
+    --rotation: 360deg;
+}
+
+.analogClock .clockHand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 40%;
+    background-color: black;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.analogClock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.analogClock .clockHand.second{
+    width: 3px;
+    height: 45%;
+    background-color: rgb(4, 12, 255);
+}
+
+.analogClock .clockHand.minute{
+    width: 7px;
+    height: 40%;
+    background-color: rgb(4, 12, 255);
+}
+
+.analogClock .clockHand.hour{
+    width: 10px;
+    height: 35%;
+    background-color: rgb(4, 12, 255);
+}
